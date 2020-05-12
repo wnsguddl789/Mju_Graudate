@@ -1,0 +1,33 @@
+{% load static %}
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/cover.css' %}">
+</head>
+<body class="text-center">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">Graduate Calculator</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="{% url 'index' %}">Home</a>
+          <a class="nav-link" href="{% url 'features' %}">Features</a>
+          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main" class="inner cover">
+      <h1 class="cover-heading">졸업학점 계산기</h1><br>
+      <p class="lead">명지대학교 학생이라면 <br>누구든지 사용 가능합니다!</p>
+      <p class="lead">
+        <a href="{% url 'blogMain' %}" class="btn btn-lg btn-secondary">Go Calculating</a>
+      </p>
+    </main>
+
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p>Made by : <a href="https://www.instagram.com/bbak_jun/">BBAKJUN</a>, with JeaWon, KyungSoo.</p>
+      </div>
+    </footer>
+  </div>
+</body>

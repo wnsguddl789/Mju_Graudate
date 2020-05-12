@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-group container">
+  <h1>Sign up!</h1>
+  <form class="" action="{% url 'signup' %}" method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <br>
+    <input class="form-control" type="text" name="username" value="">
+    <br>
+    <label for="password1">Password:</label>
+    <br>
+    <input class="form-control" type="password" name="password1" value="">
+    <br>
+    <label for="password2">Comfirm Password</label>
+    <br>
+    <input class="form-control" type="password" name="password2" value="">
+    <br
+    <label for="name">What is your name:</label>
+    <br>
+    <input class="form-control" type="text" name="name" value="">
+    <br>
+    <label for="major">What is your major</label>
+    <br>
+    <select class="form-control" name="major">
+      <optgroup label="자연캠퍼스">
+        <optgroup label="ICT융합대학">
+          <option>정보통신공학과</option>
+        </optgroup>
+        <optgroup label="자연과학대학">
+          <option>수학과</option>
+          <option>물리학과</option>
+          <option>화학과</option>
+          <option>식품영양학과</option>
+          <option>생명과학정보학과</option>
+        </optgroup>
+        <optgroup label="공과대학">
+          <option>전기공학과</option>
+          <option>전자공학과</option>
+          <option>신소재공학과</option>
+          <option>화학공학과</option>
+          <option>환경에너지공학과</option>
+          <option>토목환경공학과</option>
+          <option>교통공학과</option>
+          <option>기계공학과</option>
+          <option>산업경영공학과</option>
+          <option>컴퓨터공학과</option>
+        </optgroup>
+        <optgroup label="예술체육대학">
+          <optgroup label="디자인학부">
+            <option>시작디자인과</option>
+            <option>산업디자인과</option>
+            <option>영상디자인과</option>
+            <option>패션디자인과</option>
+          <optgroup label="스포츠학부">
+            <option>체육학과</option>
+            <option>사회체육학과</option>
+            <option>경기지도학과</option>
+          <option>바둑학과</option>
+          <optgroup label="예술학부">
+            <option>피아노과</option>
+            <option>성악과</option>
+            <option>작곡과</option>
+            <option>영화과</option>
+            <option>뮤지컬공연과</option>
+        </optgroup>
+        <optgroup label="건축대학">
+          <optgroup label="건축학부">
+            <option>건축학과</option>
+            <option>전통건축학과</option>
+            <option>공간디자인과</option>
+        </optgroup>
+        <optgroup label="방목기초교육대학">
+          <option>전공자유학부</option>
+        </optgroup>
+
+      </optgroup>
+      <optgroup label="--------------------------------------">
+      </optgroup>
+
+
+      <optgroup label="인문캠퍼스">
+        <option>여기는</option>
+        <option>너무너무</option>
+        <option>많고 귀찮어</option>
+      </optgroup>
+    </select>
+    <br>
+    <div class="form-group">
+      <label for="username">Choice Admission's year</label>
+      <select class="form-control" id="sel1" name = "addmission">
+        <option>2015</option>
+        <option>2016</option>
+        <option>2017</option>
+        <option>2018</option>
+        <option>2019</option>
+        <option>2020</option>
+      </select>
+    </div>
+    <br>
+    <input type="submit" class="btn btn-primary btn-block" name="" value="sign up">
+  </form>
+</div>
+
+
+{% endblock %}
