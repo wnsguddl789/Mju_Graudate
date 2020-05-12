@@ -65,8 +65,10 @@ def signup(request):
     if request.method =="POST":
         if request.POST["password1"] == request.POST["password2"]:
             user = Account.objects.create_user(
-                username = request.POST["username"],
-                password = request.POST["password1"],
+                username   = request.POST["username"],
+                password   = request.POST["password1"],
+                name       = request.POST["name"],
+                major      = request.POST["major"],
                 addmission = request.POST["addmission"]
             )
             auth.login(request,user)

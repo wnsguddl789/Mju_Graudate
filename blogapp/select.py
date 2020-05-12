@@ -6,7 +6,7 @@ semester = input("input semester >> ")
 # to read csv file named "samplee"
 
 # open csv file
-a = open("./major/ict_"+str(year)+"_"+str(semester)+".csv","r")
+a = open("./major/ict_"+str(year)+"_"+str(semester)+".csv","r",encoding='UTF-8')
 # read the csv file
 a = a.readlines()
 

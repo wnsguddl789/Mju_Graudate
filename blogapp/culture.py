@@ -6,7 +6,7 @@ for year in range (15,21):
 
         rb = load_workbook("C:/Users/BBAK-JUN/Desktop/culture/" + str(year) + '-' + str(semester) + ".xlsx")
         ws = rb['sheet1']
-        f = open("./culture/culture_"+str(year)+"_"+str(semester)+".csv","w")
+        f = open("./culture/culture_"+str(year)+"_"+str(semester)+".csv","w",encoding='UTF-8')
         # csv 형식으로 저장
 
         f.write("교과목, 학점, 교과목코드\n")
