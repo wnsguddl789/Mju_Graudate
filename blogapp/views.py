@@ -5,7 +5,8 @@ from django.http import HttpResponse, JsonResponse
 from .forms import Create_post
 from .models import Blog , Comment , Calculator , Account
 from .forms import BlogCommentForm
-from django.contrib.auth.models import User, UserManager
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
 from django.contrib import auth
 # Create your views here.
 def index(request):
@@ -75,7 +76,11 @@ def signup(request):
             return redirect('blogMain.html')
         return render(request,'signup.html')
     return render(request,'signup.html')
-def login(request):
+
+def logout(request):
+    auth.logout(request)
+    return redirect('blogMain.html')
+def signin(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
@@ -84,9 +89,6 @@ def login(request):
             auth.login(request,user)
             return redirect('blogMain.html')
         else:
-            return render(request,'login.html',{'error':'username or password is incorrect'})
+            return render(request,'signin.html',{'error':'username or password is incorrect'})
     else:
-        return render(request,'login.html')
-def logout(request):
-    auth.logout(request)
-    return redirect('blogMain.html')
+        return render(request,'signin.html')

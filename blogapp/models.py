@@ -1,11 +1,11 @@
 from django.db import models
-from django.contrib.auth.models import User, UserManager
+from django.contrib.auth.models import User, AbstractBaseUser, UserManager
 from django.contrib import auth
 #from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 
-class Account(models.Model):
+class Account(AbstractBaseUser):
     username   = models.CharField(max_length = 200)
     password   = models.CharField(max_length = 500)
     name       = models.CharField(max_length = 20,null=True,default='')
@@ -13,7 +13,10 @@ class Account(models.Model):
     addmission = models.CharField(max_length = 20,null=True,default='')
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
+    objects =  UserManager()
 
+    class Meta:
+        db_table = 'accounts'
     def __str__(self):
         return self.name
 
