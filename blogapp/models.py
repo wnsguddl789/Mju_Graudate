@@ -5,25 +5,13 @@ from django.contrib import auth
 from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 
-class Account(AbstractBaseUser):
-    username   = models.CharField(max_length = 200)
-    password   = models.CharField(max_length = 500)
-    name       = models.CharField(max_length = 20,null=True,default='')
-    major      = models.CharField(max_length = 20,null=True,default='')
-    addmission = models.CharField(max_length = 20,null=True,default='')
-    created_at = models.DateTimeField(auto_now_add = True)
-    updated_at = models.DateTimeField(auto_now = True)
-    objects =  UserManager()
-
-    class Meta:
-        db_table = 'accounts'
-    def __str__(self):
-        return self.name
+from django.conf import settings
+User = settings.AUTH_USER_MODEL
 
 class Blog(models.Model):
     title = models.CharField(max_length=100)
     pub_date = models.DateTimeField(auto_now_add = True)
-    author = models.ForeignKey(User, on_delete=True, null=True, default=1)
+    author = models.ForeignKey('auth.User', on_delete=True, null=True, default=1)
     body = RichTextUploadingField()
     def __str__(self):
         return self.title

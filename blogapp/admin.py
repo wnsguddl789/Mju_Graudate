@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Blog
 from .models import Comment
-from .models import Account
 from .models import Calculator
 
 
@@ -9,4 +8,3 @@ from .models import Calculator
 admin.site.register(Blog)
 admin.site.register(Comment)
 admin.site.register(Calculator)
-admin.site.register(Account)
